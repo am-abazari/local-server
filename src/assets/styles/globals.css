@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.scroll-hide {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #F5F6FA;
+    font-family: "Inter", sans-serif;
+    color: #000;
+    font-weight: 500;
+}
