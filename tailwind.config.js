@@ -19,6 +19,7 @@ module.exports = {
                 'y' : "1400px",
             },colors:{
                 'main':'#29347A',
+                'second':'#485289',
             }
         },
         

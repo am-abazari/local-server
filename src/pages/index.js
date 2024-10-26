@@ -4,7 +4,8 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
+import download from "../assets/icons/download.svg"
+import Image from "next/image";
 export default function Home() {
 
 
@@ -68,10 +69,10 @@ export default function Home() {
 
     return (
         <main>
-            <div className="w-5/6 p-8 bg-white rounded-xl shadow-lg  m-auto min-h-x mt-10">
-                <Menu />
-                <div className="text-center pt-12 border-t-2 mt-40">
-                    <h1 className="text-2xl text-main font-bold">Upload</h1>
+            <div className="lg:w-5/6 w-11/12 p-8 bg-white rounded-xl shadow-lg  m-auto min-h-x lg:mt-10 mt-5 text-sm lg:text-lg">
+                <Menu which={0} />
+                <div className="text-center pt-12 border-t-2 mt-10">
+                    <h1 className="lg:text-2xl text-base max-w-full text-main font-bold ">Upload</h1>
                     <form onSubmit={handleSubmit}>
                         <div className="flex items-center justify-center w-full mt-10 ">
                             <label htmlFor="file" className="flex flex-col items-center justify-center w-150 h-56 border-2 border-main border-dashed rounded-lg cursor-pointer  ">
@@ -86,16 +87,16 @@ export default function Home() {
                             </label>
 
                         </div>
-                        <button type="submit" className="flex items-center justify-center w-80 m-auto h-12 rounded-xl shadow-md mt-10 text-white bg-main ">Upload</button>
+                        <button type="submit" className="flex items-center justify-center w-80 m-auto h-12 rounded-xl shadow-md mt-10 text-white bg-main max-w-full ">Upload</button>
                     </form>
                 </div>
 
                 <div className="text-center mt-24 pt-12 border-t-2">
-                    <h1 className="text-2xl text-main font-bold">Download</h1>
+                    <h1 className="text-2xl text-main font-bold lg:text-2xl text-base">Files</h1>
                     {(function () {
                         let out = [];
                         for (let i = 0; i < data.length; i++) {
-                            out.push(<Link key={i} download className="block max-w-150 m-auto mt-10 bg-main text-white shadow-lg pt-4 pb-4 rounded-xl" href={`/api/files/${data[i]}`}>{data[i].split('12845')[1]}</Link>)
+                            out.push(<Link key={i} download className="flex justify-center relative max-w-150 m-auto mt-6 bg-slate-300 shadow-lg pt-4 pb-4 rounded-lg" href={`/api/files/${data[i]}`}><p className="">{data[i].split('12845')[1]}</p> <Image className="w-7 block absolute right-3" src={download} /></Link>)
                         }
                         return out.reverse();
                     })()}

@@ -40,13 +40,13 @@ function Text() {
     return (
 
         <main>
-            <div className="w-5/6 p-8 bg-white rounded-xl shadow-lg  m-auto min-h-x mt-10">
-                <Menu />
-                <div className="text-center pt-12 border-t-2 mt-40">
-                    <h1 className="text-2xl text-main font-bold">Text</h1>
-                    <textarea value={text} onChange={handlerChange} className="border-2 w-full md:w-150 mt-12 min-h-150 focus:outline-none p-4 rounded-lg" name="text" id="text"></textarea>
+            <div className="lg:w-5/6 w-11/12 p-8 bg-white rounded-xl shadow-lg  m-auto min-h-x lg:mt-10 mt-5">
+                <Menu which={1} />
+                <div className="text-center pt-12 border-t-2 mt-10">
+                    <h1 className="lg:text-2xl text-base text-main font-bold">Text</h1>
+                    <textarea value={text} onChange={handlerChange} className="border-2 w-full md:w-150 mt-12 min-h-150 focus:outline-none p-4 rounded-lg lg:text-base text-xs" name="text" id="text"></textarea>
                 </div>
-                <button onClick={handlerClear} className="w-72 bg-main pt-3 pb-3 rounded-xl shadow-lg text-white m-auto block mt-10">Clear</button>
+                <button onClick={handlerClear} className="w-72 bg-main pt-3 pb-3 rounded-xl shadow-lg text-white m-auto block mt-10 max-w-full">Clear</button>
             </div>
 
 
